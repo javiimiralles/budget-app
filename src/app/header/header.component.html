@@ -1,0 +1,19 @@
+<div class="p-5 mb-4 bg-dark rounded-3 text-center header">
+  <div class="container-fluid py-5">
+    <h3 class="fw-bold text-light">Budget available:</h3>
+
+    <h1 class="text-light mb-3">{{ totalBudget | currency:'USD':'$':'1.2-2' }}</h1>
+
+    <div>
+        <div class="earnings d-inline-block badge bg-success fs-6 mb-2">+ {{ totalEarnings | currency:'USD':'$':'1.2-2' }}
+          <span class="badge ms-2">&nbsp; &nbsp; &nbsp;&nbsp;</span>
+        </div>
+    </div>
+    <div>
+        <div class="expenses d-inline-block badge bg-danger fs-6 mt-2">- {{ totalExpenses | currency:'USD':'$':'1.2-2' }}
+          <span class="badge bg-lightcoral ms-2">{{ totalPercentage | percent }}</span>
+        </div>
+    </div>
+
+  </div>
+</div>

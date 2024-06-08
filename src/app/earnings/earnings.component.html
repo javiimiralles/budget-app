@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="fw-normal fs-5 border-success" colspan="3">EARNINGS</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let income of earnings">
+    <tr>
+      <td>{{ income.description }}</td>
+      <td>{{ income.value | currency:'USD':'$':'1.2-2' }}</td>
+      <td class="text-center">
+        <button class="btn text-danger fs-4 p-0 text-center">
+          <i class="bi bi-x-circle" (click)="deleteIncome(income)"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

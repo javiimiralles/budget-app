@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th class="fw-normal fs-5 border-danger" colspan="3">EXPENSES</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let expense of expenses">
+    <tr>
+      <td>{{ expense.description }}</td>
+      <td>{{ expense.value | currency:'USD':'$':'1.2-2' }}
+        <span class="badge bg-lightcoral ms-3">{{ calculatePercentage(expense) | percent }}</span>
+      </td>
+      <td class="text-center">
+        <button class="btn text-danger fs-4 p-0 text-center">
+          <i class="bi bi-x-circle" (click)="deleteExpense(expense)"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

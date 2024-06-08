@@ -1,0 +1,19 @@
+<div class="container">
+  <form (ngSubmit)="f.form.valid && addValue()" #f="ngForm" class="d-flex flex-row align-items-center justify-content-center flex-wrap">
+    <select class="form-select my-1 me-2 w-auto greenFocus" [ngClass]="{redFocus: type === 'expenseOperation'}" (change)="getOperationType($event)">
+      <option value="incomeOperation" selected>+</option>
+      <option value="expenseOperation">-</option>
+    </select>
+    <div class="my-1 me-2 w-50">
+      <input type="text" name="description" [(ngModel)]="descriptionInput" class="form-control greenFocus"
+            [ngClass]="{redFocus: type === 'expenseOperation'}" placeholder="Add a description" required>
+    </div>
+    <div class="my-1 me-2">
+      <input type="number" name="value" [(ngModel)]="valueInput" class="form-control greenFocus"
+            [ngClass]="{redFocus: type === 'expenseOperation'}" placeholder="Value" required>
+    </div>
+    <button type="submit" class="btn btn-outline-success" [ngClass]="{'btn-outline-danger': type === 'expenseOperation'}">
+      Create
+    </button>
+  </form>
+</div>
